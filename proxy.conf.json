@@ -1,0 +1,7 @@
+{
+    "/ema/*": {
+        "target": "https://moonshotp1940934211trial.hanatrial.ondemand.com",
+        "secure": true,
+        "changeOrigin": true
+    }
+}
