@@ -1,0 +1,9 @@
+.router-outlet {
+    color: white;
+    background-color: skyblue;
+    height: 100vh;
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
