@@ -18,6 +18,7 @@ import { CreateEventComponent } from './components/create-event/create-event.com
 import { routes } from "./routes";
 import { RouterModule } from "@angular/router";
 import { UserService } from "app/services/user.service";
+import { EventsService } from "app/services/events.service";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { UserService } from "app/services/user.service";
     MaterialModule,
     MdIconModule
   ],
-  providers: [UserService],
+  providers: [UserService, EventsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
