@@ -17,6 +17,7 @@ import { CreateEventComponent } from './components/create-event/create-event.com
 
 import { routes } from "./routes";
 import { RouterModule } from "@angular/router";
+import { UserService } from "app/services/user.service";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { RouterModule } from "@angular/router";
     MaterialModule,
     MdIconModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
