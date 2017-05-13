@@ -19,6 +19,7 @@ import { routes } from "./routes";
 import { RouterModule } from "@angular/router";
 import { UserService } from "app/services/user.service";
 import { EventsService } from "app/services/events.service";
+import { EventDetailComponent } from './components/event-detail/event-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { EventsService } from "app/services/events.service";
     SidebarComponent,
     DashboardComponent,
     MyEventsComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,

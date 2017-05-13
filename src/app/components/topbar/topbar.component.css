@@ -1,6 +1,7 @@
 nav.navbar {
     background-color: #0026ca;
     border: none;
+    margin-bottom: 0;
 }
 
 nav.navbar-default .navbar-brand {
