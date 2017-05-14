@@ -3,3 +3,13 @@
     margin-top: 50px;
     padding-left: 200px;
 }
+
+#create-fab {
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
+}
+
+.create-shown {
+    visibility: hidden;
+}

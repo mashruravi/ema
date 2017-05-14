@@ -20,7 +20,16 @@ export class EventsService {
 
 	getEvent(eventid: string): Observable<IEvent> {
 		return this._http.get(this._url + "?eid=" + eventid)
-		.map(res => <IEvent>res.json())
+			.map(res => <IEvent>res.json())
+	}
+
+	// Creates an event and returns the ID of the created event
+	createEvent(ename: string, edate: string): Observable<string> {
+		return this._http.post(this._url, {
+			ename: ename,
+			edate: edate
+		}).map(res => res.json().eid);
+
 	}
 
 }

@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { MaterialModule, MdIconModule } from '@angular/material';
+import { MaterialModule, MdIconModule, MdDatepickerModule, MdNativeDateModule } from '@angular/material';
 
 import 'hammerjs';
 
@@ -38,7 +38,9 @@ import { EventDetailComponent } from './components/event-detail/event-detail.com
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     MaterialModule,
-    MdIconModule
+    MdIconModule,
+    MdDatepickerModule,
+    MdNativeDateModule
   ],
   providers: [UserService, EventsService],
   bootstrap: [AppComponent]

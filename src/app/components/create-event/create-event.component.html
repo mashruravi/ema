@@ -1,3 +1,19 @@
-<p>
-  create-event works!
-</p>
+<md-toolbar>
+	Create New Event
+</md-toolbar>
+
+<div class="container-fluid create-form">
+
+	<md-input-container>
+		<input mdInput placeholder="Event Name" [(ngModel)]="ename">
+	</md-input-container>
+
+	<md-input-container>
+		<input mdInput [mdDatepicker]="eventDate" placeholder="Choose a date" disabled [(ngModel)]="edate">
+		<button mdSuffix [mdDatepickerToggle]="eventDate"></button>
+	</md-input-container>
+	<md-datepicker #eventDate touchUi=true></md-datepicker>
+
+	<button md-raised-button id="save-button" (click)="saveEvent()">Save</button>
+
+</div>

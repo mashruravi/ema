@@ -9,5 +9,6 @@ export const routes: Routes = [
 	{ path: "dashboard", component: DashboardComponent },
 	{ path: "myevents", component: MyEventsComponent },
 	{ path: "create", component: CreateEventComponent },
-	{ path: "event/:id", component: EventDetailComponent }
+	{ path: "event/:id", component: EventDetailComponent },
+	{ path: "create", component: CreateEventComponent }
 ];
