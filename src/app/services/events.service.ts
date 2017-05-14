@@ -12,10 +12,15 @@ export class EventsService {
 
 	getMyEvents(): Observable<IEvent[]> {
 		return this._http.get(this._url)
-				.map((res) => {
-					// debugger;
-					return <IEvent[]> res.json();
-				});
+			.map((res) => {
+				// debugger;
+				return <IEvent[]>res.json();
+			});
+	}
+
+	getEvent(eventid: string): Observable<IEvent> {
+		return this._http.get(this._url + "?eid=" + eventid)
+		.map(res => <IEvent>res.json())
 	}
 
 }
