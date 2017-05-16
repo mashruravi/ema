@@ -1,8 +1,12 @@
 <topbar></topbar>
 <sidebar></sidebar>
-<button md-fab id="create-fab" routerLink="create" routerLinkActive="create-shown">
+<button md-fab id="create-fab" (click)="handleCreate($event)">
 	<md-icon>add</md-icon>
 </button>
 <div class="router-outlet">
 	<router-outlet></router-outlet>
 </div>
+
+<!--
+	routerLink="create" routerLinkActive="create-shown"
+	-->

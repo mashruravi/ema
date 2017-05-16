@@ -13,7 +13,6 @@ export class EventsService {
 	getMyEvents(): Observable<IEvent[]> {
 		return this._http.get(this._url)
 			.map((res) => {
-				// debugger;
 				return <IEvent[]>res.json();
 			});
 	}
