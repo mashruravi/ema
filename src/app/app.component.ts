@@ -12,9 +12,4 @@ export class AppComponent {
 
 	}
 
-	handleCreate(event) {
-		event.srcElement.parentElement.classList.add("opened");
-		event.srcElement.parentElement.classList.add("opened-finish");
-	}
-
 }

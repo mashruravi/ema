@@ -15,16 +15,12 @@
 
 #create-fab {
     position: fixed;
+	transform: scale(1);
     right: 2em;
     bottom: 2em;
-	transition: transform ease-out 0.15s,
-				height ease-in 0.3s 0.15s,
-				width ease-in 0.3s 0.15s,
-				opacity ease-in 0.4s 0.1s,
-				border-radius ease-in 0.3s 0.2s,
-				visibility 0.4s;
+	transition: transform ease-out 0.15s;
 }
 
-.create-shown {
-    visibility: hidden;
+#create-fab.create-shown {
+    transform: scale(0);
 }
