@@ -1,20 +1,33 @@
-md-toolbar {
-    background-color: #0026ca;
-    color: #fff;
-}
-
-.create-form {
-	padding: 2em;
-	margin-top: 1em;
-	box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
+.card {
+	box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: #fff;
-    width: 90%;
+    min-width: 600px;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 7em;
+	padding: 1em 3em;
 }
 
-.create-form md-input-container {
+.full-width {
 	width: 100%;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.shift-right {
+	text-align: right;
+}
+
+.shift-center {
+	text-align: center;
 }
 
 #save-button {
-	float: right;
+	right: 0;
+}
+
+#save-button {
+	background-color: #0026ca;
+	color: #fff;
 }
