@@ -1,47 +1,49 @@
-<div class="card">
-	<form>
+<div class="card-container">
+	<div class="card">
+		<form>
 
-		<div class="full-width shift-center">
-			<h3>Create New Event</h3>
-		</div>
+			<div class="full-width shift-center">
+				<h3>Create New Event</h3>
+			</div>
 
-		<md-input-container class="full-width">
-			<input mdInput placeholder="Name" [(ngModel)]="ename" name="eventName">
-		</md-input-container>
+			<md-input-container class="full-width">
+				<input mdInput placeholder="Name" [(ngModel)]="ename" name="eventName">
+			</md-input-container>
 
-		<md-input-container class="full-width">
-			<input mdInput [mdDatepicker]="eventDate" placeholder="Date" disabled [(ngModel)]="edate" name="eventDate">
-			<button mdSuffix [mdDatepickerToggle]="eventDate"></button>
-		</md-input-container>
-		<md-datepicker #eventDate touchUi=true></md-datepicker>
+			<md-input-container class="full-width">
+				<input mdInput [mdDatepicker]="eventDate" placeholder="Date" disabled [(ngModel)]="edate" name="eventDate">
+				<button mdSuffix [mdDatepickerToggle]="eventDate"></button>
+			</md-input-container>
+			<md-datepicker #eventDate touchUi=true></md-datepicker>
 
-		<div class="full-width">
-			<label style="color: rgba(0,0,0,.38); padding-bottom: 1em;">Time</label>
-			<br />
-			<md-select placeholder="HH" [(ngModel)]="eventHour" name="eventHour">
-				<md-option *ngFor="let h of hours" [value]="h">
-					{{h}}
-				</md-option>
-			</md-select>
+			<div class="full-width">
+				<label style="color: rgba(0,0,0,.38); padding-bottom: 1em;">Time</label>
+				<br />
+				<md-select placeholder="HH" [(ngModel)]="eventHour" name="eventHour">
+					<md-option *ngFor="let h of hours" [value]="h">
+						{{h}}
+					</md-option>
+				</md-select>
 
-			<md-select placeholder="MM" [(ngModel)]="eventMinute" name="eventMinute">
-				<md-option *ngFor="let m of minutes" [value]="m">
-					{{m}}
-				</md-option>
-			</md-select>
-		</div>
+				<md-select placeholder="MM" [(ngModel)]="eventMinute" name="eventMinute">
+					<md-option *ngFor="let m of minutes" [value]="m">
+						{{m}}
+					</md-option>
+				</md-select>
+			</div>
 
-		<md-input-container class="full-width">
-			<input mdInput placeholder="Location" [(ngModel)]="eventLocation" name="eventLocation">
-		</md-input-container>
+			<md-input-container class="full-width">
+				<input mdInput placeholder="Location" [(ngModel)]="eventLocation" name="eventLocation">
+			</md-input-container>
 
-		<md-input-container class="full-width">
-			<textarea mdInput placeholder="Description" rows="5"></textarea>
-		</md-input-container>
+			<md-input-container class="full-width">
+				<textarea mdInput placeholder="Description" rows="5"></textarea>
+			</md-input-container>
 
-		<div class="full-width shift-right">
-			<button md-raised-button id="save-button" (click)="saveEvent()">Save</button>
-		</div>
+			<div class="full-width shift-right">
+				<button md-raised-button id="save-button" (click)="saveEvent()">Save</button>
+			</div>
 
-	</form>
+		</form>
+	</div>
 </div>
