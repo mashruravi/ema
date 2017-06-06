@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
 import { Observable } from "rxjs/Observable";
-import { IEvent } from "app/interfaces/ievent";
+import { Event } from "app/models/event";
 
 @Injectable()
 export class EventsService {
@@ -10,25 +10,30 @@ export class EventsService {
 
 	constructor(private _http: Http) { }
 
-	getMyEvents(): Observable<IEvent[]> {
+	getMyEvents(): Observable<Event[]> {
 		return this._http.get(this._url)
 			.map((res) => {
-				return <IEvent[]>res.json();
+				return <Event[]>res.json();
 			});
 	}
 
-	getEvent(eventid: string): Observable<IEvent> {
+	getEvent(eventid: string): Observable<Event> {
 		return this._http.get(this._url + "?eid=" + eventid)
-			.map(res => <IEvent>res.json())
+			.map(res => <Event>res.json())
 	}
 
 	// Creates an event and returns the ID of the created event
-	createEvent(ename: string, edate: string): Observable<string> {
-		return this._http.post(this._url, {
-			ename: ename,
-			edate: edate
-		}).map(res => res.json().eid);
+	createEvent(event: Event): Observable<string> {
 
+		let payload = {
+			ename: event.name,
+			edate: event.edate,
+			etime : event.etime,
+			location: event.location,
+			description: event.description
+		};
+
+		return this._http.post(this._url, payload).map(res => res.json().eid);
 	}
 
 }

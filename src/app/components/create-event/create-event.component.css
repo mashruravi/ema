@@ -1,5 +1,5 @@
 .card-container {
-	width: calc(100vw - 200px);
+	width: calc(100vw - 220px);
 	min-width: 650px;
 	padding: 3em 0;
 }
@@ -27,10 +27,11 @@
 }
 
 #save-button {
+	background-color: #0026ca;
+	color: #fff;
 	right: 0;
 }
 
-#save-button {
-	background-color: #0026ca;
-	color: #fff;
+#save-button:disabled {
+	background-color: #7e95f9;
 }

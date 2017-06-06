@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { IEvent } from "app/interfaces/ievent";
+import { Event } from "app/models/event";
 import { EventsService } from "app/services/events.service";
 import { Router } from "@angular/router";
 
@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
 })
 export class MyEventsComponent implements OnInit {
 
-	myevents: Array<IEvent>;
+	myevents: Array<Event>;
 
 	constructor(
 		private _eventsService: EventsService,
