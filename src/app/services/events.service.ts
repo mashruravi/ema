@@ -25,9 +25,16 @@ export class EventsService {
 	// Creates an event and returns the ID of the created event
 	createEvent(event: Event): Observable<string> {
 
+		// Convert date to YYYY-MM-DD format that the backend expects
+		let day = event.edate.getDate();
+		let month = event.edate.getMonth() + 1; // Month is 0 indexed
+		let year = event.edate.getFullYear();
+		let eventDate = `${year}-${month}-${day}`;
+
+
 		let payload = {
 			ename: event.name,
-			edate: event.edate,
+			edate: eventDate,
 			etime : event.etime,
 			location: event.location,
 			description: event.description
