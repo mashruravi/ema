@@ -2,3 +2,7 @@ md-toolbar {
     background-color: #0026ca;
     color: #fff;
 }
+
+.spacer {
+    flex: 1 1 auto;
+}

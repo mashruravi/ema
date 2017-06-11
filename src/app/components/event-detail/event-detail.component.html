@@ -1,3 +1,7 @@
-<md-toolbar>{{event?.ename}}</md-toolbar>
+<md-toolbar>
+  <span>{{event?.name}}</span>
+  <span class="spacer"></span>
+  <button md-button (click)="onDeleteEvent()">Delete</button>
+</md-toolbar>
 <div class="container-fluid">
 </div>

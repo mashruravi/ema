@@ -19,7 +19,17 @@ export class EventsService {
 
 	getEvent(eventid: string): Observable<Event> {
 		return this._http.get(this._url + "?eid=" + eventid)
-			.map(res => <Event>res.json())
+			.map(res => {
+				let data = res.json();
+				return new Event(data.eid,
+					data.ename,
+					data.edate,
+					data.etime,
+					data.createdOn,
+					data.createdBy,
+					data.location,
+					data.description);
+			})
 	}
 
 	// Creates an event and returns the ID of the created event
@@ -35,12 +45,24 @@ export class EventsService {
 		let payload = {
 			ename: event.name,
 			edate: eventDate,
-			etime : event.etime,
+			etime: event.etime,
 			location: event.location,
 			description: event.description
 		};
 
 		return this._http.post(this._url, payload).map(res => res.json().eid);
+	}
+
+	deleteEvent(eventId: string): Observable<boolean> {
+
+		return this._http.get(this._url + "?eid=" + eventId + "&delete=true")
+			.map(res => {
+				if(res.status === 200) {
+					return true;
+				}
+				return false;
+			});
+
 	}
 
 }

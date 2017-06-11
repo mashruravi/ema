@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { MaterialModule, MdIconModule, MdDatepickerModule, MdNativeDateModule } from '@angular/material';
+import { MaterialModule, MdIconModule, MdDatepickerModule, MdNativeDateModule, MdSnackBar } from '@angular/material';
 
 import 'hammerjs';
 
