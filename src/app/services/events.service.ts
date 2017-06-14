@@ -32,15 +32,19 @@ export class EventsService {
 			})
 	}
 
-	// Creates an event and returns the ID of the created event
-	createEvent(event: Event): Observable<string> {
+	// Convert date to YYYY-MM-DD format that the backend expects
+	private convertDate(date: Date): string {
+		date = new Date(date);
+		let day = date.getDate();
+		let month = date.getMonth() + 1; // Month is 0 indexed
+		let year = date.getFullYear();
 
-		// Convert date to YYYY-MM-DD format that the backend expects
-		let day = event.edate.getDate();
-		let month = event.edate.getMonth() + 1; // Month is 0 indexed
-		let year = event.edate.getFullYear();
-		let eventDate = `${year}-${month}-${day}`;
+		return `${year}-${month}-${day}`;
+	}
 
+	private makePayload(event: Event, method?: string): Object {
+
+		let eventDate = this.convertDate(event.edate);
 
 		let payload = {
 			ename: event.name,
@@ -50,14 +54,43 @@ export class EventsService {
 			description: event.description
 		};
 
+		if(method === "UPDATE") {
+			payload["eid"] = event.id;
+		}
+
+		return payload;
+
+	}
+
+	// Creates an event and returns the ID of the created event
+	createEvent(event: Event): Observable<string> {
+
+		let payload = this.makePayload(event);
+
 		return this._http.post(this._url, payload).map(res => res.json().eid);
+	}
+
+	updateEvent(event: Event): Observable<boolean> {
+
+		let payload = this.makePayload(event, "UPDATE");
+		return this._http.put(this._url, payload)
+			.map(res => {
+				if(res.status === 200) {
+					return true;
+				} else {
+					return false;
+				}
+			}).catch((err, caught) => {
+				return Observable.throw(false);
+			});
+
 	}
 
 	deleteEvent(eventId: string): Observable<boolean> {
 
-		return this._http.get(this._url + "?eid=" + eventId + "&delete=true")
+		return this._http.delete(this._url + "?eid=" + eventId)
 			.map(res => {
-				if(res.status === 200) {
+				if(res.status === 204) {
 					return true;
 				}
 				return false;
