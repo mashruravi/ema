@@ -14,10 +14,10 @@ export const appearAnimation: AnimationEntryMetadata =
                 opacity: 0,
                 transform: "scale(0)"
             }),
-            animate('0.2s ease-in')
+            animate('0.3s ease-in')
         ]),
         transition(':leave', [
-            animate('0.2s ease-out', style({
+            animate('0.3s ease-in', style({
                 opacity: 0,
                 transform: "scale(0)"
             }))

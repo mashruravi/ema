@@ -6,12 +6,13 @@ nav.navbar {
 
 nav.navbar-default .navbar-brand {
     color: #fff;
+    font-size: 12px;
 }
 
 nav.navbar-default .navbar-nav>li>a {
     color: #fff;
 }
 
-nav.navbar {
+/* nav.navbar {
     box-shadow: 0px 3px 10px #000;
-}
+} */

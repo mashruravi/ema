@@ -10,7 +10,6 @@ import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MyEventsComponent } from './components/my-events/my-events.component';
 import { CreateEventComponent } from './components/create-event/create-event.component';
@@ -25,7 +24,6 @@ import { EventDetailComponent } from './components/event-detail/event-detail.com
   declarations: [
     AppComponent,
     TopbarComponent,
-    SidebarComponent,
     DashboardComponent,
     MyEventsComponent,
     CreateEventComponent,
