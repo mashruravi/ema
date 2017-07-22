@@ -11,8 +11,27 @@
 		</ul>
 		 -->
 		<ul class="nav navbar-nav navbar-right">
+			<!-- <li><a href="#" (click)="onSearchButtonClick($event)"><i class="material-icons md-18 md-light">search</i></a></li> -->
 			<li><a>{{loggedInUser}}</a></li>
 		</ul>
 
 	</div>
 </nav>
+
+<div class="search-topbar" [ngClass]="{'show': showSearch}">
+	<div class="search-container">
+		<div class="search-button">
+			<i class="material-icons">search</i>
+		</div>
+		<div class="search-input">
+			<input type="text" placeholder="Search" id="input-search" />
+		</div>
+		<div class="search-close">
+			<i class="material-icons" (click)="onSearchClose($event)">close</i>
+		</div>
+	</div>
+</div>
+<div class="search-body" [ngClass]="{'show': showSearch}">
+	<div class="card"></div>
+	<div class="card"></div>
+</div>

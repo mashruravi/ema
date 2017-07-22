@@ -16,3 +16,96 @@ nav.navbar-default .navbar-nav>li>a {
 /* nav.navbar {
     box-shadow: 0px 3px 10px #000;
 } */
+
+.search-topbar {
+    height: 75px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    z-index: 1050;
+    transform: translateY(-80px);
+
+    transition: transform 200ms;
+}
+
+.search-topbar.show {
+    transform: translateY(0);
+}
+
+.search-topbar .search-container {
+    height: calc(100% - 2em);
+    margin: 1em;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between
+}
+
+.search-topbar .search-container .search-button {
+    width: 50px;
+    height: 100%;
+    display: flex;
+}
+
+.search-topbar .search-container .search-button .material-icons {
+    margin: auto;
+    cursor: pointer;
+}
+
+.search-topbar .search-container .search-input {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.search-topbar .search-container .search-input input {
+    width: 100%;
+    margin: auto;
+    border: none;
+    background-color: rgba(0,0,0,0);
+    font-size: 16px;
+}
+
+.search-topbar .search-container .search-input input:active, input:focus {
+    outline: none;
+}
+
+.search-topbar .search-container .search-close {
+    width: 50px;
+    height: 100%;
+    display: flex;
+}
+
+.search-topbar .search-container .search-close .material-icons {
+    margin: auto;
+    cursor: pointer;
+}
+
+.search-body {
+    height: calc(100vh - 75px);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e2e2e2;
+    z-index: 1050;
+    transform: translateY(100%); 
+
+    transition: transform 200ms;
+
+    padding: 2em;
+}
+
+.search-body.show {
+    transform: translateY(0);
+}
+
+.search-body .card {
+    width: calc(100vw - 8em);
+    height: 200px;
+    background-color: #fff;
+    margin: 2em;
+    box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.02);
+}

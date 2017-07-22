@@ -12,7 +12,7 @@ export class UserService {
 	getLoggedInUser(): Observable<string> {
 		
 		return this._http.get(this._url)
-				.map(res => res.json().username);
+				.map(res => res.json().fullName);
 		
 	}
 

@@ -8,13 +8,28 @@ import { UserService } from "app/services/user.service";
 })
 export class TopbarComponent implements OnInit {
 
-	private loggedInUser = "";
+	loggedInUser = "";
+	showSearch = true;
 
 	constructor(private _userService: UserService) { }
 
 	ngOnInit() {
 		this._userService.getLoggedInUser()
 			.subscribe(username => this.loggedInUser = username);
+	}
+
+	onSearchButtonClick(event) {
+		event.preventDefault();
+		this.showSearch = true;
+		const input: any = document.querySelector('#input-search');
+		input.select();
+	}
+
+	onSearchClose(event) {
+		event.preventDefault();
+		const input: any = document.querySelector('#input-search');
+		input.value = "";
+		this.showSearch = false;
 	}
 
 }
