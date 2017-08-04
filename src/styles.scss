@@ -5,6 +5,19 @@ body {
     overflow-y: scroll;
 }
 
+.mat-button-ripple {
+    border-radius: 100px;
+  }
+
+  .mat-button:hover {
+    color: white !important;
+  }
+
+  .mat-button-focus-overlay {
+    transition: background-color 300ms;
+    background-color: black !important;
+  }
+
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -55,3 +68,46 @@ body {
 /* Rules for using icons as white on a dark background. */
 .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+/* Custom Theme */
+@import '~@angular/material/theming';
+
+$green: (
+  50: #007700,
+  100: #007700,
+  200: #007700,
+  300: #007700,
+  400: #007700,
+  500: #007700,
+  600: #007700,
+  700: #007700,
+  800: #007700,
+  900: #007700,
+  A100: #007700,
+  A200: #007700,
+  A400: #007700,
+  A700: #007700,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: white,
+    900: white,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  )
+);
+
+$ema-app-primary: mat-palette($green);
+$ema-app-accent:  mat-palette($mat-grey);
+
+$ema-app-theme: mat-light-theme($ema-app-primary, $ema-app-accent);
+
+@include angular-material-theme($ema-app-theme);
