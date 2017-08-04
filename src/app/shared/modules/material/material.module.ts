@@ -1,9 +1,19 @@
 import { NgModule } from '@angular/core';
 
-const materialModules = [];
+import {
+    MdButtonModule,
+    MdToolbarModule,
+    MdSidenavModule
+} from '@angular/material';
+
+const materialModules = [
+    MdButtonModule,
+    MdToolbarModule,
+    MdSidenavModule
+];
 
 @NgModule({
-  imports: [...materialModules],
-  exports: [...materialModules]
+    imports: [...materialModules],
+    exports: [...materialModules]
 })
 export class MaterialModule { }

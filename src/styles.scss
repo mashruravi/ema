@@ -1,35 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
-body {
-    background-color: #f5f5f5 !important;
-    overflow-y: scroll;
-}
+/* Custom Theme */
+@import '~@angular/material/theming';
 
-.mat-button-ripple {
-    border-radius: 100px;
-  }
+@include mat-core();
 
-  .mat-button:hover {
-    color: white !important;
-  }
+$ema-app-primary: mat-palette($mat-indigo);
+$ema-app-accent:  mat-palette($mat-pink);
 
-  .mat-button-focus-overlay {
-    transition: background-color 300ms;
-    background-color: black !important;
-  }
+$ema-app-theme: mat-light-theme($ema-app-primary, $ema-app-accent);
 
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(/assets/fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
-  src: local('Material Icons'),
-    local('MaterialIcons-Regular'),
-    url(/assets/fonts/MaterialIcons-Regular.woff2) format('woff2'),
-    url(/assets/fonts/MaterialIcons-Regular.woff) format('woff'),
-    url(/assets/fonts/MaterialIcons-Regular.ttf) format('truetype');
-}
+@include angular-material-theme($ema-app-theme);
 
+
+/* Material icon theming */
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -69,45 +53,37 @@ body {
 .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 
-/* Custom Theme */
-@import '~@angular/material/theming';
 
-$green: (
-  50: #007700,
-  100: #007700,
-  200: #007700,
-  300: #007700,
-  400: #007700,
-  500: #007700,
-  600: #007700,
-  700: #007700,
-  800: #007700,
-  900: #007700,
-  A100: #007700,
-  A200: #007700,
-  A400: #007700,
-  A700: #007700,
-  contrast: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: $black-87-opacity,
-    600: $black-87-opacity,
-    700: $black-87-opacity,
-    800: white,
-    900: white,
-    A100: $black-87-opacity,
-    A200: $black-87-opacity,
-    A400: $black-87-opacity,
-    A700: $black-87-opacity,
-  )
-);
+/* Global styling */
 
-$ema-app-primary: mat-palette($green);
-$ema-app-accent:  mat-palette($mat-grey);
+$topbar-height: 64px;
 
-$ema-app-theme: mat-light-theme($ema-app-primary, $ema-app-accent);
+body {
+    font-family: Roboto;
+}
 
-@include angular-material-theme($ema-app-theme);
+#app-topbar {
+    height: $topbar-height;
+
+    .mat-button {
+        .mat-button-focus-overlay {
+            opacity: 0;
+        }
+
+        transition: color 0.2s;
+        color: #ddd;
+        &:hover {
+            color: #fff;
+        }
+
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+    }
+
+}
+
+#app-sidenav-container {
+    height: calc( 100vh - #{$topbar-height} );
+}

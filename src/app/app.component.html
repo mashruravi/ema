@@ -1,1 +1,20 @@
-App works!
+<md-sidenav-container id="master-sidenav-container">
+
+    <md-sidenav #appmenu align="end">
+        stuff
+    </md-sidenav>
+
+    <app-topbar (menuToggle)="sidenav.toggle()" (appMenuToggle)="appmenu.toggle()"></app-topbar>
+    <md-sidenav-container id="app-sidenav-container">
+
+        <md-sidenav #sidenav>
+            <div class="menu-item" routerLink="/home" (click)="sidenav.close()">Home</div>
+            <div class="menu-item" routerLink="/my-events" (click)="sidenav.close()">My Events</div>
+        </md-sidenav>
+
+        <router-outlet></router-outlet>
+
+    </md-sidenav-container>
+
+
+</md-sidenav-container>
