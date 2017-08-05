@@ -7,7 +7,9 @@ import {
     MdIconModule,
     MdInputModule,
     MdDatepickerModule,
-    MdNativeDateModule
+    MdNativeDateModule,
+    MdTabsModule,
+    MdButtonToggleModule
 } from '@angular/material';
 
 const materialModules = [
@@ -17,7 +19,9 @@ const materialModules = [
     MdIconModule,
     MdInputModule,
     MdDatepickerModule,
-    MdNativeDateModule
+    MdNativeDateModule,
+    MdTabsModule,
+    MdButtonToggleModule
 ];
 
 @NgModule({

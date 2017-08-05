@@ -37,6 +37,27 @@ export class EventService {
         });
   }
 
+  getEvent(eventId: string): Observable<EventModel> {
+
+    return this.http.get(`${this.url}?eid=${eventId}`).map(res => {
+
+        const event = res.json();
+
+        return new EventModel(
+            event.eid,
+            event.ename,
+            event.edate,
+            event.etime,
+            event.location,
+            event.description,
+            event.createdBy,
+            event.createdOn
+        );
+
+    });
+
+  }
+
   createEvent(name: string, date?: Date, location?: string, description?: string): Observable<EventModel> {
 
     const payload = {

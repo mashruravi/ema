@@ -54,6 +54,11 @@ $ema-app-theme: mat-light-theme($ema-app-primary, $ema-app-accent);
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 
 
+/* Import component-specific material theming overrides */
+@import 'app/event-detail/event-detail-material.scss';
+@include event-detail-material();
+
+
 /* Global styling */
 
 body {
@@ -117,4 +122,8 @@ body {
     &:disabled {
         background-color: #bbb;
     }
+}
+
+.spacer {
+    flex-grow: 1;
 }

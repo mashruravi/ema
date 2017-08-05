@@ -1,0 +1,15 @@
+@mixin event-detail-material() {
+
+    #event-toolbar {
+
+        #publish-button.mat-button-toggle {
+            color: #FFF;
+        }
+
+        #publish-button.mat-button-toggle-checked {
+            color: #000;
+        }
+
+    }
+
+}
