@@ -13,13 +13,15 @@ import 'hammerjs';
 import { MyEventsComponent } from './my-events/my-events.component';
 import { HomeComponent } from './home/home.component';
 import { EventService } from 'app/shared/services/event.service';
+import { CreateEventComponent } from './create-event/create-event.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopbarComponent,
     MyEventsComponent,
-    HomeComponent
+    HomeComponent,
+    CreateEventComponent
   ],
   imports: [
     BrowserModule,

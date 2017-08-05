@@ -1,5 +1,17 @@
-#my-event-container {
+#my-event-page {
 
-    display: flex;
+    height: 100%;
+    overflow-y: scroll;
+
+    #create-event-button {
+        position: absolute;
+        bottom: 2em;
+        right: 2em;
+    }
+
+    .event-container {
+        display: flex;
+        flex-direction: column;
+    }
 
 }

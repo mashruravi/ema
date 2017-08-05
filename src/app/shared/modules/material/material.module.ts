@@ -3,13 +3,21 @@ import { NgModule } from '@angular/core';
 import {
     MdButtonModule,
     MdToolbarModule,
-    MdSidenavModule
+    MdSidenavModule,
+    MdIconModule,
+    MdInputModule,
+    MdDatepickerModule,
+    MdNativeDateModule
 } from '@angular/material';
 
 const materialModules = [
     MdButtonModule,
     MdToolbarModule,
-    MdSidenavModule
+    MdSidenavModule,
+    MdIconModule,
+    MdInputModule,
+    MdDatepickerModule,
+    MdNativeDateModule
 ];
 
 @NgModule({

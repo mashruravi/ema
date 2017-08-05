@@ -56,10 +56,11 @@ $ema-app-theme: mat-light-theme($ema-app-primary, $ema-app-accent);
 
 /* Global styling */
 
-$topbar-height: 64px;
-
 body {
     font-family: Roboto;
+    font-size: 14px;
+
+    margin: 0;
 
     // Custom scrollbar for webkit browsers
     *::-webkit-scrollbar {
@@ -73,7 +74,10 @@ body {
 }
 
 #app-topbar {
-    height: $topbar-height;
+
+    md-toolbar-row {
+        min-height: 64px;
+    }
 
     .mat-button {
         .mat-button-focus-overlay {
@@ -94,6 +98,23 @@ body {
 
 }
 
-#app-sidenav-container {
-    height: calc( 100vh - #{$topbar-height} );
+#master-sidenav-container {
+
+    &  > .mat-sidenav-content {
+        height: 100vh;
+    }
+
+    #app-sidenav-container {
+        height: calc(100vh - 64px);
+    }
+
+}
+
+.primary-button {
+    background-color: #3f51b5;
+    color: #fff !important;
+
+    &:disabled {
+        background-color: #bbb;
+    }
 }

@@ -1,3 +1,13 @@
-<div id="my-event-container">
+<div id="my-event-page">
+
+    <button md-fab id="create-event-button" routerLink="/create"><md-icon>add</md-icon></button>
+
+    <div class="event-container">
+
+        <div *ngFor="let event of events">
+            {{event.name}}
+        </div>
+
+    </div>
 
 </div>

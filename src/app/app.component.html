@@ -4,7 +4,9 @@
         stuff
     </md-sidenav>
 
-    <app-topbar (menuToggle)="sidenav.toggle()" (appMenuToggle)="appmenu.toggle()"></app-topbar>
+    <div class="topbar">
+        <app-topbar (menuToggle)="sidenav.toggle()" (appMenuToggle)="appmenu.toggle()"></app-topbar>
+    </div>
     <md-sidenav-container id="app-sidenav-container">
 
         <md-sidenav #sidenav>

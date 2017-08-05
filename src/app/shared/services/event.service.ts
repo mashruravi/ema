@@ -37,4 +37,30 @@ export class EventService {
         });
   }
 
+  createEvent(name: string, date?: Date, location?: string, description?: string): Observable<EventModel> {
+
+    const payload = {
+        ename: name,
+        edate: date,
+        location: location,
+        description: description
+    };
+
+    return this.http.post(this.url, payload)
+        .map((res) => {
+            const event = res.json();
+            return new EventModel(
+                event.eid,
+                event.ename,
+                event.edate,
+                event.etime,
+                event.location,
+                event.description,
+                event.createdBy,
+                event.createdOn
+            );
+        });
+
+  }
+
 }

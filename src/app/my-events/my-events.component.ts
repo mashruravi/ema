@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from 'app/shared/services/event.service';
+import { EventModel } from 'app/shared/models/event-model';
 
 @Component({
   selector: 'app-my-events',
@@ -8,11 +9,13 @@ import { EventService } from 'app/shared/services/event.service';
 })
 export class MyEventsComponent implements OnInit {
 
+  events: Array<EventModel>;
+
   constructor( private eventService: EventService ) { }
 
   ngOnInit() {
       this.eventService.getEvents().subscribe((events) => {
-        console.log(events);
+        this.events = events;
       });
   }
 
