@@ -60,6 +60,16 @@ $topbar-height: 64px;
 
 body {
     font-family: Roboto;
+
+    // Custom scrollbar for webkit browsers
+    *::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: #999;
+        border-radius: 10px;
+    }
 }
 
 #app-topbar {
