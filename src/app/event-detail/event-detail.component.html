@@ -1,31 +1,13 @@
 <md-toolbar color="primary" id="event-toolbar">
-    <span class="event-name">SAP TechEd 2017</span>
+    <span class="event-name">{{event?.name}}</span>
     <span class="spacer"></span>
     <md-button-toggle id="publish-button">Publish</md-button-toggle>
 </md-toolbar>
 
 <md-tab-group id="event-tab-group">
-    <md-tab label="Maintain">
-        Edit stuff
+    <md-tab label="Edit Event Details">
+        <app-edit-event></app-edit-event>
     </md-tab>
-    <md-tab label="Organize">
-        <div>Organizers</div>
-        <div>Organizers</div>
-        <div>Organizers</div>
-        <div>Organizers</div>
-
-        <div>Organizers</div><div>Organizers</div><div>Organizers</div><div>Organizers</div>
-        <div>Organizers</div><div>Organizers</div><div>Organizers</div><div>Organizers</div>
-        <div>Organizers</div><div>Organizers</div><div>Organizers</div><div>Organizers</div>
-        <div>Organizers</div><div>Organizers</div><div>Organizers</div><div>Organizers</div>
-        <div>Organizers</div><div>Organizers</div><div>Organizers</div><div>Organizers</div>
-        <div>Organizers</div><div>Organizers</div><div>Organizers</div><div>Organizers</div>
-        <div>Organizers</div><div>Organizers</div><div>Organizers</div><div>Organizers</div>
-        <div>Organizers</div><div>Organizers</div><div>Organizers</div><div>Organizers</div>
-        <div>Organizers</div><div>Organizers</div><div>Organizers</div><div>Organizers</div>
-        <div>Organizers</div><div>Organizers</div><div>Organizers</div><div>Organizers</div>
-        <div>Organizers</div><div>Organizers</div><div>Organizers</div><div>Organizers</div>
-
-        <div>Organizers</div><div>Organizers</div><div>Organizers</div><div>Organizers</div>
+    <md-tab disabled label="Organize">
     </md-tab>
 </md-tab-group>

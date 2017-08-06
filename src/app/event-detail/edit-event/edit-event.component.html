@@ -1,0 +1,33 @@
+<div id="edit-event-form" class="mat-elevation-z2">
+
+    <div class="body">
+
+        <form novalidate [formGroup]="eventForm">
+
+            <md-input-container>
+                <input type="text" mdInput placeholder="Name" formControlName="name" required />
+                <md-error>Please enter a name for the event. Only letters and digits allowed.</md-error>
+            </md-input-container>
+
+            <md-input-container>
+                <input mdInput [mdDatepicker]="eventDatePicker" placeholder="Date" formControlName="date" />
+                <button mdSuffix [mdDatepickerToggle]="eventDatePicker"></button>
+            </md-input-container>
+            <md-datepicker #eventDatePicker></md-datepicker>
+
+            <md-input-container>
+                <input type="text" mdInput placeholder="Location" formControlName="location" />
+                <md-error>Only letters and digits allowed.</md-error>
+            </md-input-container>
+
+            <md-input-container>
+                <textarea mdInput placeholder="Description" formControlName="description"></textarea>
+            </md-input-container>
+
+            <button md-button type="submit" class="primary-button" id="submit-button" [disabled]="eventForm.pristine || !eventForm.valid">Save</button>
+
+        </form>
+
+    </div>
+
+</div>

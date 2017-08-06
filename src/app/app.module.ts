@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { EventService } from 'app/shared/services/event.service';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
+import { EditEventComponent } from './event-detail/edit-event/edit-event.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
     MyEventsComponent,
     HomeComponent,
     CreateEventComponent,
-    EventDetailComponent
+    EventDetailComponent,
+    EditEventComponent
   ],
   imports: [
     BrowserModule,
