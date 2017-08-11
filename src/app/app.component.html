@@ -4,7 +4,7 @@
         stuff
     </md-sidenav>
 
-    <div class="topbar mat-elevation-z4">
+    <div class="topbar" [ngClass]="{'mat-elevation-z4': showTopbarShadow}">
         <app-topbar (menuToggle)="sidenav.toggle()" (appMenuToggle)="appmenu.toggle()"></app-topbar>
     </div>
     <md-sidenav-container id="app-sidenav-container">

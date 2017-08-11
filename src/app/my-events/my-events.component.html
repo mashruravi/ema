@@ -1,9 +1,34 @@
-<div id="my-event-page">
+<div id="my-event-page" (scroll)="onScroll($event)">
 
     <button md-fab id="create-event-button" routerLink="/create"><md-icon>add</md-icon></button>
 
     <div class="event-container">
 
+        <div *ngFor="let event of events">
+            {{event.name}}
+        </div>
+
+        <div *ngFor="let event of events">
+            {{event.name}}
+        </div>
+        <div *ngFor="let event of events">
+            {{event.name}}
+        </div>
+        <div *ngFor="let event of events">
+            {{event.name}}
+        </div>
+        <div *ngFor="let event of events">
+            {{event.name}}
+        </div>
+        <div *ngFor="let event of events">
+            {{event.name}}
+        </div>
+        <div *ngFor="let event of events">
+            {{event.name}}
+        </div>
+        <div *ngFor="let event of events">
+            {{event.name}}
+        </div>
         <div *ngFor="let event of events">
             {{event.name}}
         </div>

@@ -17,6 +17,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { EditEventComponent } from './event-detail/edit-event/edit-event.component';
 import { FieldStatusDirective } from './shared/directives/field-status.directive';
+import { ApplicationStateService } from 'app/shared/services/application-state.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { FieldStatusDirective } from './shared/directives/field-status.directive
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [ EventService ],
+  providers: [ EventService, ApplicationStateService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 .topbar {
     position: relative;
     z-index: 4;
+    transition: box-shadow 200ms ease-in;
 }
 
 #app-sidenav-container {
