@@ -30,3 +30,9 @@ export class EventModel {
     }
 
 }
+
+export enum Status {
+    SUCCESS,
+    ERROR,
+    PENDING
+}

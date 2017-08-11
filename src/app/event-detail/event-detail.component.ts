@@ -33,7 +33,6 @@ export class EventDetailComponent implements OnInit {
 
         // Get the event data
         this.eventService.getEvent(eventId).subscribe(event => {
-            console.log(event);
             this.event = event;
         });
 

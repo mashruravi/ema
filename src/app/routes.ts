@@ -8,7 +8,7 @@ import { EventDetailComponent } from 'app/event-detail/event-detail.component';
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'my-events', component: MyEventsComponent },
-    { path: 'event/:eventid', component: EventDetailComponent },
+    { path: 'my-events/:eventid', component: EventDetailComponent },
     { path: 'create', component: CreateEventComponent },
     { path: '', pathMatch: 'full', redirectTo: '/home' }
     // { path: '**', component: PageNotFoundComponent }

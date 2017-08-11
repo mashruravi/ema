@@ -6,7 +6,7 @@
 
 <md-tab-group id="event-tab-group">
     <md-tab label="Edit Event Details">
-        <app-edit-event></app-edit-event>
+        <app-edit-event [event]="event" *ngIf="event"></app-edit-event>
     </md-tab>
     <md-tab disabled label="Organize">
     </md-tab>
