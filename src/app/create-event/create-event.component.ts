@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { EventService } from 'app/shared/services/event.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-create-event',
@@ -11,7 +12,11 @@ export class CreateEventComponent implements OnInit {
 
     eventForm: FormGroup;
 
-    constructor( private fb: FormBuilder, private eventService: EventService ) {
+    constructor(
+        private fb: FormBuilder,
+        private eventService: EventService,
+        private router: Router
+    ) {
         this.createForm();
     }
 
@@ -28,7 +33,6 @@ export class CreateEventComponent implements OnInit {
     }
 
     onSave() {
-        console.log(this.eventForm.value);
         this.eventService.createEvent(
             this.eventForm.value.name,
             this.eventForm.value.date,
@@ -36,7 +40,7 @@ export class CreateEventComponent implements OnInit {
             this.eventForm.value.description
         ).subscribe(event => {
 
-            console.log(event.id, event.name);
+            this.router.navigate(['my-events', event.id]);
 
         });
     }
