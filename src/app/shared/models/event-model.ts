@@ -21,12 +21,12 @@ export class EventModel {
     ) {
         this.id = id;
         this.name = name;
-        this.date = new Date(date);
+        this.date = date;
         this.time = time;
         this.location = location;
         this.description = description;
         this.createdBy = createdBy;
-        this.createdOn = new Date(createdOn);
+        this.createdOn = createdOn;
     }
 
 }
