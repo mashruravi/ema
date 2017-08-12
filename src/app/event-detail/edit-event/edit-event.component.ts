@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Directive, ElementRef, Renderer } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { EventModel, Status } from 'app/shared/models/event-model';
 
 import 'rxjs/add/operator/distinctUntilChanged';
@@ -15,14 +15,14 @@ export class EditEventComponent implements OnInit {
     @Input() event: EventModel;
     eventForm: FormGroup;
 
-    fieldStates: Map<string, Status>;
+    fieldStates: Map<string, Status> = new Map<string, Status>();
 
     constructor(private fb: FormBuilder, private eventService: EventService) {
     }
 
     ngOnInit() {
         this.eventForm = this.fb.group({
-            name: this.event.name || '',
+            name: [this.event.name || '', Validators.compose([Validators.required, Validators.pattern(/^[a-zA-z0-9 ]*$/)])],
             location: this.event.location || '',
             description: this.event.description || '',
             date: this.event.date || ''
@@ -32,8 +32,6 @@ export class EditEventComponent implements OnInit {
     }
 
     attachChangeHandlers(): void {
-
-        this.fieldStates = new Map<string, Status>();
 
         const fields = Object.keys(this.eventForm.controls);
         fields.forEach((e) => {
