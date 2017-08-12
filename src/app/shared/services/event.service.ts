@@ -58,11 +58,25 @@ export class EventService {
 
     }
 
+    convertDateToString(date: Date): string {
+
+        const simpleDate = date.toLocaleDateString();
+        const dateParts = simpleDate.split('/');
+        const paddedDay = '0' + dateParts[1];
+        const day = paddedDay.substr(-2);
+        const paddedMonth = '0' + dateParts[0];
+        const month = paddedMonth.substr(-2);
+        const dbDateFormat = dateParts[2] + month + day;
+
+        return dbDateFormat;
+
+    }
+
     createEvent(name: string, date?: Date, location?: string, description?: string): Observable<EventModel> {
 
         const payload = {
             ename: name,
-            edate: date,
+            edate: date ? this.convertDateToString(date) : null,
             location: location,
             description: description
         };
@@ -86,9 +100,10 @@ export class EventService {
 
     updateEvent(evt: EventModel) {
 
+
         return this.http.put(this.url, {
             ename: evt.name,
-            edate: evt.date,
+            edate: this.convertDateToString(evt.date),
             location: evt.location,
             etime: evt.time,
             description: evt.description,
