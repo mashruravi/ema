@@ -9,7 +9,8 @@ import {
     MdDatepickerModule,
     MdNativeDateModule,
     MdTabsModule,
-    MdButtonToggleModule
+    MdButtonToggleModule,
+    MdListModule
 } from '@angular/material';
 
 const materialModules = [
@@ -21,7 +22,8 @@ const materialModules = [
     MdDatepickerModule,
     MdNativeDateModule,
     MdTabsModule,
-    MdButtonToggleModule
+    MdButtonToggleModule,
+    MdListModule
 ];
 
 @NgModule({

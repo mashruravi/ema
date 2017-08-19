@@ -2,36 +2,17 @@
 
     <button md-fab id="create-event-button" routerLink="/create"><md-icon>add</md-icon></button>
 
-    <div class="event-container">
+    <div class="event-container mat-elevation-z2">
 
-        <div *ngFor="let event of events">
-            {{event.name}}
-        </div>
-
-        <div *ngFor="let event of events">
-            {{event.name}}
-        </div>
-        <div *ngFor="let event of events">
-            {{event.name}}
-        </div>
-        <div *ngFor="let event of events">
-            {{event.name}}
-        </div>
-        <div *ngFor="let event of events">
-            {{event.name}}
-        </div>
-        <div *ngFor="let event of events">
-            {{event.name}}
-        </div>
-        <div *ngFor="let event of events">
-            {{event.name}}
-        </div>
-        <div *ngFor="let event of events">
-            {{event.name}}
-        </div>
-        <div *ngFor="let event of events">
-            {{event.name}}
-        </div>
+        <md-list>
+            <h3 md-subheader>My Events</h3>
+            <md-list-item *ngFor="let event of events" [routerLink]="'/my-events/' + event.id">
+                <h4 md-line>{{event.name}}</h4>
+                <p md-line>
+                    {{event.description}}
+                </p>
+            </md-list-item>
+        </md-list>
 
     </div>
 

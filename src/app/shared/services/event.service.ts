@@ -60,7 +60,7 @@ export class EventService {
 
     convertDateToString(date: Date): string {
 
-        const simpleDate = date.toLocaleDateString();
+        const simpleDate = new Date(date).toLocaleDateString();
         const dateParts = simpleDate.split('/');
         const paddedDay = '0' + dateParts[1];
         const day = paddedDay.substr(-2);

@@ -13,18 +13,18 @@ export class MyEventsComponent implements OnInit {
   events: Array<EventModel>;
 
   constructor(
-      private eventService: EventService,
-      private appStateService: ApplicationStateService
-    ) { }
+    private eventService: EventService,
+    private appStateService: ApplicationStateService
+  ) { }
 
   ngOnInit() {
-      this.eventService.getEvents().subscribe((events) => {
-        this.events = events;
-      });
+    this.eventService.getEvents().subscribe((events) => {
+      this.events = events;
+    });
   }
 
   onScroll(event) {
-      this.appStateService.updateScroll(event.target.scrollTop);
+    this.appStateService.updateScroll(event.target.scrollTop);
   }
 
 }
